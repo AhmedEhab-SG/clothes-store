@@ -1,0 +1,15 @@
+.accorContainer {
+  min-width: 400px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .detailContainer {
+    align-items: center;
+    width: 100%;
+  }
+
+  .accorContainer {
+    min-width: 100%;
+  }
+}

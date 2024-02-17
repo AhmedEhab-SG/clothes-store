@@ -1,0 +1,31 @@
+<nav class="pe-2 navbar navbar-expand-lg position-fixed z-3 w-100">
+  <div class="container-fluid">
+    <a class="navbar-brand" (click)="goToHome()" href="#">LOGO</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="row me-2 m-auto">
+      <button (click)="goToProduct()" class="btn btn-light">Product</button>
+    </div>
+
+    <div class="row me-2 m-auto">
+      <button (click)="gotToAdmin()" class="btn btn-light">Admin</button>
+    </div>
+
+    <!-- <div class="row me-2 m-auto">
+      <button class="btn btn-light">About</button>
+    </div> -->
+  </div>
+</nav>
