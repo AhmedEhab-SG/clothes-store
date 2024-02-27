@@ -7,6 +7,7 @@
 /frontend/bazel-out
 
 # Node
+/node_modules
 /frontend/node_modules
 /mock-backend/node_modules
 npm-debug.log

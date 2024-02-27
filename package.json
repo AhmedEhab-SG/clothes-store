@@ -1,0 +1,15 @@
+{
+  "name": "clothes-store",
+  "version": "1.0.0",
+  "description": "angular clothes-store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently --kill-others \"npm --prefix ./frontend run start\" \"npm --prefix ./mock-backend run start\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

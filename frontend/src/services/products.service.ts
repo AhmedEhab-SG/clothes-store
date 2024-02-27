@@ -11,8 +11,6 @@ export class ProductsService {
 
   constructor(public http: HttpClient) {}
 
-  targetProduct: IProduct = {} as IProduct;
-
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.baseURL);
   }
