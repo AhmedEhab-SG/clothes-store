@@ -1,0 +1,56 @@
+<div class="card rounded-3 shadow">
+  <img
+    class="card-img-top"
+    (mouseenter)="onHavor()"
+    (mouseleave)="onHavor()"
+    (click)="goToDetails(productObj.id)"
+    src="{{ img }}"
+    alt="Title"
+  />
+  <div class="card-body d-flex flex-column">
+    <h4 class="card-title">{{ productObj.name }}</h4>
+    <hr class="m-0 mb-3" />
+
+    <div class="d-flex gap-2 align-items-center mb-2">
+      <i
+        [ngClass]="productObj.gender === 'Men' ? 'men' : ''"
+        class="card-text pe-1"
+        ><span>For:</span> {{ productObj.gender }}</i
+      >
+      <i
+        [ngClass]="{
+          men: productObj.gender === 'Men' &&  productObj.stock >= 1,
+          'bg-danger text-light': productObj.stock < 1,
+          'bg-warning': productObj.stock == 1,
+        }"
+        class="card-text pe-1"
+        ><span>Left:</span> {{ productObj.stock }}</i
+      >
+    </div>
+
+    <p
+      [ngClass]="{
+      'bg-danger': productObj.stock < 1,
+      'bg-warning text-dark': productObj.stock == 1,
+    }"
+      class="availability card-text align-self-end bg-success rounded p-2 py-1 text-light mb-3 fw-semibold"
+    >
+      {{ availability }}
+    </p>
+
+    <p class="card-text align-self-center mb-2">
+      <strong>Price:</strong> {{ productObj.price }} L.E
+    </p>
+
+    <button
+      (click)="addToCart(productObj)"
+      class="btn btn-primary mt-0 fw-semibold"
+      [ngClass]="{
+        'bg-white text-dark disabled': productObj.stock < 1,
+        'bg-warning darkColor': productObj.stock == 1,
+      }"
+    >
+      {{ availability }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,176 @@
+<form
+  [formGroup]="getProdcutForm"
+  (ngSubmit)="getProductHandler()"
+  *ngIf="!currentProduct.id"
+  class="d-flex flex-column align-content-center"
+>
+  <h2 class="text-center">Update Product</h2>
+  <div class="d-flex Input">
+    <div class="">
+      <label for="id" class="col-form-label">ID:</label>
+    </div>
+    <div class="position-relative inputContainer">
+      <input
+        placeholder="Enter Product ID "
+        name="id"
+        type="text"
+        id="id"
+        formControlName="id"
+        class="form-control inputType"
+        aria-describedby="idHelpInline"
+      />
+
+      <span
+        *ngIf="
+          getProdcutForm.controls.id.invalid &&
+          getProdcutForm.controls.id.touched
+        "
+        id="idHelpInline"
+        class="form-text position-absolute"
+      >
+        ID must not be empty.
+      </span>
+    </div>
+  </div>
+  <div class="gap-5 d-flex justify-content-center align-items-center">
+    <app-button [small]="true" [btnText]="'Get Product'"></app-button>
+  </div>
+  <p *ngIf="!currentProduct.id && notFound">No product found matched your ID</p>
+</form>
+
+<form
+  *ngIf="currentProduct.id"
+  class="d-flex flex-column align-content-center"
+  [formGroup]="updateProductForm"
+  (ngSubmit)="updateProductHandler()"
+>
+  <h2 class="text-center">Update Product</h2>
+
+  <div class="hidden">
+    <div class="d-flex Input">
+      <div class="">
+        <label for="name" class="col-form-label">Name:</label>
+      </div>
+      <div class="position-relative inputContainer">
+        <input
+          placeholder="Enter Product Name"
+          type="text"
+          name="name"
+          id="name"
+          formControlName="name"
+          class="form-control inputType"
+          aria-describedby="nameHelpInline"
+        />
+        <span
+          *ngIf="
+            updateProductForm.controls.name.invalid &&
+            updateProductForm.controls.name.touched
+          "
+          id="nameHelpInline"
+          class="form-text position-absolute"
+        >
+          Name must be 3-20 characters long.
+        </span>
+      </div>
+    </div>
+    <div class="d-flex Input">
+      <div class="">
+        <label for="gender" class="col-form-label">Gender:</label>
+      </div>
+      <div class="position-relative inputContainer">
+        <input
+          placeholder="Enter Product Gender"
+          type="radio"
+          name="gender"
+          id="gender"
+          value="Men"
+          formControlName="gender"
+          class="form-switch"
+          aria-describedby="menHelpInline"
+        />
+        <i id="menHelpInline" class="form-text me-5"> for Men </i>
+
+        <input
+          placeholder="Enter Product Gender"
+          type="radio"
+          value="Women"
+          name="gender"
+          id="gender"
+          formControlName="gender"
+          class="form-switch"
+          aria-describedby="femaleHelpInline"
+        />
+        <i id="femaleHelpInline" class="form-text"> for Women </i>
+        <span
+          *ngIf="
+            updateProductForm.controls.gender.invalid &&
+            updateProductForm.controls.gender.touched
+          "
+          class="d-block position-absolute"
+          >Must choose one gender at least</span
+        >
+      </div>
+    </div>
+    <div class="d-flex Input">
+      <div>
+        <label for="price" class="col-form-label">Price:</label>
+      </div>
+      <div class="position-relative inputContainer">
+        <input
+          placeholder="Enter Product Current Stock"
+          type="text"
+          name="price"
+          id="price"
+          formControlName="price"
+          class="form-control inputType"
+          aria-describedby="priceHelpInline"
+        />
+        <span
+          *ngIf="
+            updateProductForm.controls.price.invalid &&
+            updateProductForm.controls.price.touched
+          "
+          id="priceHelpInline"
+          class="form-text position-absolute"
+        >
+          Price must not be less than 3 and numbers.
+        </span>
+      </div>
+    </div>
+    <div class="d-flex Input">
+      <div class="">
+        <label for="stock" class="col-form-label">Stock:</label>
+      </div>
+      <div class="position-relative inputContainer">
+        <input
+          placeholder="Enter Product Current Stock"
+          type="text"
+          name="stock"
+          id="stock"
+          formControlName="stock"
+          class="form-control inputType"
+          aria-describedby="stockHelpInline"
+        />
+        <span
+          *ngIf="
+            updateProductForm.controls.stock.invalid &&
+            updateProductForm.controls.stock.touched
+          "
+          id="stockHelpInline"
+          class="form-text position-absolute"
+        >
+          Must have stock more than 0.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="gap-5 d-flex justify-content-center align-items-center">
+    <app-button [small]="true" [btnText]="'Update'"></app-button>
+    <app-button
+      (onClick)="clearProduct()"
+      [small]="true"
+      [bgColorTrans]="true"
+      [btnText]="'Go Back'"
+    ></app-button>
+  </div>
+</form>

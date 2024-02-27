@@ -1,0 +1,327 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Blue Dress",
+      "gender": "Women",
+      "price": 450,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/1/1.avif",
+        "assets/imgs/products/1/2.avif",
+        "assets/imgs/products/1/3.avif",
+        "assets/imgs/products/1/4.avif",
+        "assets/imgs/products/1/5.avif"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Green Dress",
+      "gender": "Women",
+      "price": 400,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/2/1.avif",
+        "assets/imgs/products/2/2.avif",
+        "assets/imgs/products/2/3.avif",
+        "assets/imgs/products/2/4.avif",
+        "assets/imgs/products/2/5.avif"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Gray Suit",
+      "gender": "Men",
+      "price": 250,
+      "stock": 2,
+      "imgs": [
+        "assets/imgs/products/3/1.avif",
+        "assets/imgs/products/3/2.avif",
+        "assets/imgs/products/3/3.avif",
+        "assets/imgs/products/3/4.avif",
+        "assets/imgs/products/3/5.avif"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Creamy Jacket",
+      "gender": "Men",
+      "price": 450,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/4/1.avif",
+        "assets/imgs/products/4/2.avif",
+        "assets/imgs/products/4/3.avif",
+        "assets/imgs/products/4/4.avif",
+        "assets/imgs/products/4/5.avif"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Creamy Pants",
+      "gender": "Men",
+      "price": 200,
+      "stock": 0,
+      "imgs": [
+        "assets/imgs/products/5/1.avif",
+        "assets/imgs/products/5/2.avif",
+        "assets/imgs/products/5/3.avif",
+        "assets/imgs/products/5/4.avif",
+        "assets/imgs/products/5/5.avif"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Gray Jacket",
+      "gender": "Men",
+      "price": 500,
+      "stock": 4,
+      "imgs": [
+        "assets/imgs/products/6/1.avif",
+        "assets/imgs/products/6/2.avif",
+        "assets/imgs/products/6/3.avif",
+        "assets/imgs/products/6/4.avif",
+        "assets/imgs/products/6/5.avif"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Lead Jacket",
+      "gender": "Men",
+      "price": 500,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/7/1.avif",
+        "assets/imgs/products/7/2.avif",
+        "assets/imgs/products/7/3.avif",
+        "assets/imgs/products/7/4.avif",
+        "assets/imgs/products/7/5.avif"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "White Dress",
+      "gender": "Women",
+      "price": 450,
+      "stock": 2,
+      "imgs": [
+        "assets/imgs/products/8/1.avif",
+        "assets/imgs/products/8/2.avif",
+        "assets/imgs/products/8/3.avif",
+        "assets/imgs/products/8/4.avif",
+        "assets/imgs/products/8/5.avif"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Gary Pants",
+      "gender": "Women",
+      "price": 200,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/9/1.avif",
+        "assets/imgs/products/9/2.avif",
+        "assets/imgs/products/9/3.avif",
+        "assets/imgs/products/9/4.avif",
+        "assets/imgs/products/8/5.avif"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Golden Dress",
+      "gender": "Women",
+      "price": 500,
+      "stock": 0,
+      "imgs": [
+        "assets/imgs/products/10/1.avif",
+        "assets/imgs/products/10/2.avif",
+        "assets/imgs/products/10/3.avif",
+        "assets/imgs/products/10/4.avif",
+        "assets/imgs/products/10/5.avif"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Creamy Dress",
+      "gender": "Women",
+      "price": 500,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/11/1.avif",
+        "assets/imgs/products/11/2.avif",
+        "assets/imgs/products/11/3.avif",
+        "assets/imgs/products/11/4.avif",
+        "assets/imgs/products/11/5.avif"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Blue Dress",
+      "gender": "Women",
+      "price": 450,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/1/1.avif",
+        "assets/imgs/products/1/2.avif",
+        "assets/imgs/products/1/3.avif",
+        "assets/imgs/products/1/4.avif",
+        "assets/imgs/products/1/5.avif"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Green Dress",
+      "gender": "Women",
+      "price": 400,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/2/1.avif",
+        "assets/imgs/products/2/2.avif",
+        "assets/imgs/products/2/3.avif",
+        "assets/imgs/products/2/4.avif",
+        "assets/imgs/products/2/5.avif"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Gray Suit",
+      "gender": "Men",
+      "price": 250,
+      "stock": 2,
+      "imgs": [
+        "assets/imgs/products/3/1.avif",
+        "assets/imgs/products/3/2.avif",
+        "assets/imgs/products/3/3.avif",
+        "assets/imgs/products/3/4.avif",
+        "assets/imgs/products/3/5.avif"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Gary Pants",
+      "gender": "Women",
+      "price": 200,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/9/1.avif",
+        "assets/imgs/products/9/2.avif",
+        "assets/imgs/products/9/3.avif",
+        "assets/imgs/products/9/4.avif",
+        "assets/imgs/products/8/5.avif"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Golden Dress",
+      "gender": "Women",
+      "price": 500,
+      "stock": 0,
+      "imgs": [
+        "assets/imgs/products/10/1.avif",
+        "assets/imgs/products/10/2.avif",
+        "assets/imgs/products/10/3.avif",
+        "assets/imgs/products/10/4.avif",
+        "assets/imgs/products/10/5.avif"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Creamy Dress",
+      "gender": "Women",
+      "price": 450,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/11/1.avif",
+        "assets/imgs/products/11/2.avif",
+        "assets/imgs/products/11/3.avif",
+        "assets/imgs/products/11/4.avif",
+        "assets/imgs/products/11/5.avif"
+      ]
+    },
+
+    {
+      "id": "18",
+      "name": "Blue Dress",
+      "gender": "Women",
+      "price": 450,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/1/1.avif",
+        "assets/imgs/products/1/2.avif",
+        "assets/imgs/products/1/3.avif",
+        "assets/imgs/products/1/4.avif",
+        "assets/imgs/products/1/5.avif"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Green Dress",
+      "gender": "Women",
+      "price": 400,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/2/1.avif",
+        "assets/imgs/products/2/2.avif",
+        "assets/imgs/products/2/3.avif",
+        "assets/imgs/products/2/4.avif",
+        "assets/imgs/products/2/5.avif"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Gray Suit",
+      "gender": "Men",
+      "price": 250,
+      "stock": 2,
+      "imgs": [
+        "assets/imgs/products/3/1.avif",
+        "assets/imgs/products/3/2.avif",
+        "assets/imgs/products/3/3.avif",
+        "assets/imgs/products/3/4.avif",
+        "assets/imgs/products/3/5.avif"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Gary Pants",
+      "gender": "Women",
+      "price": 200,
+      "stock": 1,
+      "imgs": [
+        "assets/imgs/products/9/1.avif",
+        "assets/imgs/products/9/2.avif",
+        "assets/imgs/products/9/3.avif",
+        "assets/imgs/products/9/4.avif",
+        "assets/imgs/products/8/5.avif"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Golden Dress",
+      "gender": "Women",
+      "price": 500,
+      "stock": 0,
+      "imgs": [
+        "assets/imgs/products/10/1.avif",
+        "assets/imgs/products/10/2.avif",
+        "assets/imgs/products/10/3.avif",
+        "assets/imgs/products/10/4.avif",
+        "assets/imgs/products/10/5.avif"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Creamy Dress",
+      "gender": "Women",
+      "price": 450,
+      "stock": 3,
+      "imgs": [
+        "assets/imgs/products/11/1.avif",
+        "assets/imgs/products/11/2.avif",
+        "assets/imgs/products/11/3.avif",
+        "assets/imgs/products/11/4.avif",
+        "assets/imgs/products/11/5.avif"
+      ]
+    }
+  ]
+}
