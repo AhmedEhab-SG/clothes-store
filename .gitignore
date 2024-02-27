@@ -8,7 +8,7 @@
 
 # Node
 /frontend/node_modules
-/database/node_modules
+/mock-backend/node_modules
 npm-debug.log
 yarn-error.log
 
