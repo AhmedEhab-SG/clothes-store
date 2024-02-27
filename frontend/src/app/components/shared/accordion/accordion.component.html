@@ -1,0 +1,31 @@
+<div class="accordion accorContainer" id="accordionExample">
+  <div
+    *ngFor="let accObj of accordionArr; let i = index"
+    class="accordion-item"
+  >
+    <h2 class="accordion-header" [attr.id]="'heading' + i">
+      <button
+        [attr.class]="'accordion-button ' + (i === 0 ? '' : 'collapsed')"
+        type="button"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + i"
+        [attr.aria-expanded]="i === 0 ? 'true' : 'false'"
+        [attr.aria-controls]="'collapse' + i"
+      >
+        {{ accObj.title }}
+      </button>
+    </h2>
+    <div
+      [attr.id]="'collapse' + i"
+      [attr.class]="
+        'accordion-collapse collapse' + (i === 0 ? 'collapsed' : '')
+      "
+      [attr.aria-labelledby]="'heading' + i"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        {{ accObj.content }}
+      </div>
+    </div>
+  </div>
+</div>

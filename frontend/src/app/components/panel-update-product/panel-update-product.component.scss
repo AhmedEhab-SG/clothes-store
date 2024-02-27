@@ -1,0 +1,50 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+}
+.hidden {
+  @extend form;
+  padding: 0;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  color: #7f4722;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+.Input {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+  font-size: 0.8rem;
+}
+
+.inputType {
+  width: 100%;
+}
+.inputContainer {
+  width: 100%;
+  max-width: 300px;
+}
+
+label {
+  min-width: 3rem;
+}
+
+span {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+p {
+  color: red;
+  font-weight: bolder;
+}
