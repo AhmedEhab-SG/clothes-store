@@ -10,7 +10,7 @@
   "scripts": {
     "start": "concurrently --kill-others \"npm --prefix ./frontend start\" \"npm --prefix ./mock-backend start\"",
     "ng": "npm --prefix ./frontend run ng",
-    "build": "concurrently --kill-others \"npm --prefix ./frontend run build\" \"npm --prefix ./mock-backend start\"",
+    "build": "npm --prefix ./frontend run build",
     "watch": "npm --prefix ./frontend run watch",
     "test": "npm --prefix ./frontend run test"
   },
