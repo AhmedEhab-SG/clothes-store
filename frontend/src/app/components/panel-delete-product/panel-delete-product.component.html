@@ -34,17 +34,17 @@
   <div class="gap-5 d-flex justify-content-center align-items-center">
     <app-button
       [small]="true"
-      *ngIf="!currentProduct.id"
+      *ngIf="!currentProduct?.id"
       [btnText]="'Get Product'"
     ></app-button>
     <app-button
-      *ngIf="currentProduct.id"
+      *ngIf="currentProduct?.id"
       (onClick)="deleteProductHandler()"
       [small]="true"
       [btnText]="'Delete'"
     ></app-button>
     <app-button
-      *ngIf="currentProduct.id"
+      *ngIf="currentProduct?.id"
       (onClick)="clearProduct()"
       [small]="true"
       [bgColorTrans]="true"
@@ -52,5 +52,7 @@
     ></app-button>
   </div>
   <p class="text-center" *ngIf="deleted">Product Deleted</p>
-  <p *ngIf="!currentProduct.id && notFound">No product found matched your ID</p>
+  <p *ngIf="!currentProduct?.id && notFound">
+    No product found matched your ID
+  </p>
 </form>

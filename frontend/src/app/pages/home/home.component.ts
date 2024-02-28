@@ -11,7 +11,10 @@ import { ProductsService } from 'src/services/products.service';
 export class HomeComponent implements OnInit {
   products: IProduct[] = [];
 
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    private productsStaticService: ProductsStaticService
+  ) {}
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe({
@@ -19,7 +22,7 @@ export class HomeComponent implements OnInit {
         this.products = products;
       },
       error: (err) => {
-        console.log(err);
+        this.products = this.productsStaticService.getProducts();
       },
     });
   }

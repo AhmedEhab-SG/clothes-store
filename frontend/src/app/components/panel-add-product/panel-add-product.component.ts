@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/types/iProduct';
+import { ProductsStaticService } from 'src/services/products-static.service';
 
 import { ProductsService } from 'src/services/products.service';
 
@@ -23,7 +24,8 @@ export class PanelAddProductComponent {
 
   constructor(
     private fb: FormBuilder,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private productsStaticService: ProductsStaticService
   ) {
     this.createdProduct = new EventEmitter();
   }
@@ -56,8 +58,12 @@ export class PanelAddProductComponent {
         next: (createdProduct) => {
           this.createdProduct.emit(createdProduct);
         },
-        error: (err) => {
-          console.log(err);
+        error: () => {
+          const createdProduct = this.productsStaticService.createProduct({
+            ...this.addProductForm.value,
+            imgs: this.staticImg,
+          });
+          this.createdProduct.emit(createdProduct);
         },
       });
   }

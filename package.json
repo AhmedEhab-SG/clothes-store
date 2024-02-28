@@ -12,7 +12,8 @@
     "ng": "npm --prefix ./frontend run ng",
     "build": "npm --prefix ./frontend run build",
     "watch": "npm --prefix ./frontend run watch",
-    "test": "npm --prefix ./frontend run test"
+    "test": "npm --prefix ./frontend run test",
+    "dev": "npm --prefix ./frontend run start"
   },
   "author": "",
   "license": "ISC",

@@ -10,24 +10,27 @@ import { ProductsService } from 'src/services/products.service';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit, OnChanges {
-  prodcutId: string = '';
+  productId: string = '';
   product = {} as IProduct;
   products: IProduct[] = [];
 
   constructor(
     private productsService: ProductsService,
+    private productsStaticService: ProductsStaticService,
     private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.prodcutId = this.activatedRoute.snapshot.params['id'];
+    this.productId = this.activatedRoute.snapshot.params['id'];
 
-    this.productsService.getProductById(this.prodcutId).subscribe({
+    this.productsService.getProductById(this.productId).subscribe({
       next: (product) => {
         this.product = product;
       },
       error: (err) => {
-        console.log(err);
+        this.product = this.productsStaticService.getProductById(
+          this.productId
+        );
       },
     });
 
@@ -36,7 +39,7 @@ export class DetailsComponent implements OnInit, OnChanges {
         this.products = products;
       },
       error: (err) => {
-        console.log(err);
+        this.products = this.productsStaticService.getProducts();
       },
     });
   }

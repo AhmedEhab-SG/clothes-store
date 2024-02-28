@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/types/iProduct';
+import { ProductsStaticService } from 'src/services/products-static.service';
 import { ProductsService } from 'src/services/products.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class PanelDeleteProductComponent {
 
   constructor(
     private fb: FormBuilder,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private productsStaticService: ProductsStaticService
   ) {
     this.createdProduct = new EventEmitter();
   }
@@ -31,39 +33,47 @@ export class PanelDeleteProductComponent {
     if (!this.getProdcutForm.valid)
       return this.getProdcutForm.markAllAsTouched();
 
-    const id = this.getProdcutForm.value.id;
-
-    this.productsService.getProductById(id).subscribe({
-      next: (product: IProduct) => {
-        for (let prop in product) {
-          this.currentProduct[prop] = product[prop];
-        }
-      },
-      error: (err) => {
-        this.notFound = true;
-      },
-    });
-    if (!this.currentProduct) return;
-    this.createdProduct.emit(this.currentProduct);
+    this.productsService
+      .getProductById(this.getProdcutForm.value.id)
+      .subscribe({
+        next: (product: IProduct) => {
+          this.currentProduct = product;
+          this.createdProduct.emit(this.currentProduct);
+        },
+        error: () => {
+      
+          this.currentProduct = this.productsStaticService.getProductById(
+            this.getProdcutForm.value.id
+          );
+      
+          if (!this.currentProduct) {
+            this.notFound = true;
+          } else {
+            this.createdProduct.emit(this.currentProduct);
+          }
+        },
+      });
   }
 
   deleteProductHandler() {
     this.productsService.deleteProductById(this.currentProduct.id).subscribe({
       next: () => {
-        for (let prop in this.currentProduct) {
-          if (this.currentProduct.hasOwnProperty(prop)) {
-            delete this.currentProduct[prop];
-          }
-        }
+        this.currentProduct = {} as IProduct;
         this.deleted = true;
-        console.log(this.currentProduct);
+        this.createdProduct.emit(this.currentProduct);
       },
-      error: (err) => {
-        console.log(err);
+      error: () => {
+        const deletedOrder = this.productsStaticService.deleteProductById(
+          this.currentProduct.id
+        );
+
+        if (!deletedOrder) return;
+
+        this.currentProduct = {} as IProduct;
+        this.deleted = true;
+        this.createdProduct.emit(this.currentProduct);
       },
     });
-
-    this.createdProduct.emit(this.currentProduct);
   }
 
   clearProduct() {

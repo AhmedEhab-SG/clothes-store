@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/types/iProduct';
+import { ProductsStaticService } from 'src/services/products-static.service';
 
 import { ProductsService } from 'src/services/products.service';
 
@@ -24,7 +25,8 @@ export class PanelUpdateProductComponent {
 
   constructor(
     private fb: FormBuilder,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private productsStaticService: ProductsStaticService
   ) {
     this.createdProduct = new EventEmitter();
   }
@@ -39,22 +41,6 @@ export class PanelUpdateProductComponent {
     stock: ['', [Validators.min(1), Validators.pattern('^[0-9]*$')]],
   });
 
-  // getProductHandler() {
-  //   this.notFound = false;
-  //   if (!this.getProdcutForm.valid)
-  //     return this.getProdcutForm.markAllAsTouched();
-
-  //   const id = this.getProdcutForm.value.id;
-
-  //   const targetProduct = this.productsStaticService.getProductById(id);
-
-  //   if (!targetProduct) return (this.notFound = true);
-
-  //   this.currentProduct = targetProduct;
-
-  //   this.createdProduct.emit(this.currentProduct);
-  // }
-
   getProductHandler() {
     this.notFound = false;
     if (!this.getProdcutForm.valid)
@@ -64,16 +50,19 @@ export class PanelUpdateProductComponent {
 
     this.productsService.getProductById(id).subscribe({
       next: (product: IProduct) => {
-        for (let prop in product) {
-          this.currentProduct[prop] = product[prop];
-        }
+        this.currentProduct = product;
+
+        this.createdProduct.emit(this.currentProduct);
       },
-      error: (err) => {
-        this.notFound = true;
+      error: () => {
+        this.currentProduct = this.productsStaticService.getProductById(id);
+        if (!this.currentProduct) {
+          this.notFound = true;
+          return;
+        }
+        this.createdProduct.emit(this.currentProduct);
       },
     });
-    if (!this.currentProduct) return;
-    this.createdProduct.emit(this.currentProduct);
   }
 
   updateProductHandler() {
@@ -92,16 +81,19 @@ export class PanelUpdateProductComponent {
 
     this.productsService.updateProductById(id, checkingProduct).subscribe({
       next: (product) => {
-        for (let prop in product) {
-          this.currentProduct[prop] = product[prop];
-        }
+        this.currentProduct = product;
+
+        this.createdProduct.emit(this.currentProduct);
       },
-      error: (err) => {
-        console.log(err);
+      error: () => {
+        this.currentProduct = this.productsStaticService.updateProductById(
+          id,
+          checkingProduct
+        );
+
+        this.createdProduct.emit(this.currentProduct);
       },
     });
-
-    this.createdProduct.emit(this.currentProduct);
   }
 
   clearProduct() {

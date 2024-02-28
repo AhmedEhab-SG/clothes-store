@@ -1,3 +1,4 @@
+import { ProductsStaticService } from 'src/services/products-static.service';
 import { IProduct } from 'src/app/types/iProduct';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/services/products.service';
@@ -9,7 +10,10 @@ import { ProductsService } from 'src/services/products.service';
 })
 export class ProductListComponent implements OnInit {
   productsArr: IProduct[] = [];
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    private productsStaticService: ProductsStaticService
+  ) {}
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe({
@@ -17,7 +21,7 @@ export class ProductListComponent implements OnInit {
         this.productsArr = products;
       },
       error: (err) => {
-        console.log(err);
+        this.productsArr = this.productsStaticService.getProducts();
       },
     });
   }
