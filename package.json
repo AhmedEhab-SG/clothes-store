@@ -10,8 +10,8 @@
   "scripts": {
     "start": "concurrently --kill-others \"npm --prefix ./frontend start\" \"npm --prefix ./mock-backend start\"",
     "ng": "npm --prefix ./frontend run ng",
-    "build": "npm --prefix ./frontend run build",
-    "watch": "concurrently --kill-others \"npm --prefix ./frontend run watch\" \"npm --prefix ./mock-backend start\"",
+    "build": "concurrently --kill-others \"npm --prefix ./frontend run build\" \"npm --prefix ./mock-backend start\"",
+    "watch": "npm --prefix ./frontend run watch",
     "test": "npm --prefix ./frontend run test"
   },
   "author": "",
