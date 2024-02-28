@@ -11,7 +11,7 @@
     "start": "concurrently --kill-others \"npm --prefix ./frontend start\" \"npm --prefix ./mock-backend start\"",
     "ng": "npm --prefix ./frontend run ng",
     "build": "npm --prefix ./frontend run build",
-    "watch": "npm --prefix ./frontend run watch",
+    "watch": "concurrently --kill-others \"npm --prefix ./frontend run watch\" \"npm --prefix ./mock-backend start\"",
     "test": "npm --prefix ./frontend run test"
   },
   "author": "",
